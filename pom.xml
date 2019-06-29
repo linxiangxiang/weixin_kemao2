@@ -16,6 +16,12 @@
 
 	<properties>
 		<java.version>11</java.version>
+		
+			<!-- 源代码的字符编码，由于大家的开发环境都是Windows，默认GBK，而服务器默认UTF-8 -->
+		<!-- 所以必须设置字符编码，否则乱码！ -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- 生成的报告文件的字符编码 -->
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<dependencies>
@@ -43,9 +49,14 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
+			<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
