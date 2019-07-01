@@ -18,7 +18,7 @@ import com.gdkm.weixin.service.MessageConvertHelper;
 //路径和类的映射关系
 //<url-pattern> 用于映射URL和Servlet的关系
 //如果多人共享一台服务器，把kemao_2改为姓名的拼音
-@RequestMapping("/kemao_2/message/receiver")
+@RequestMapping("/lxx/message/receiver")
 public class MessageReceiverController {
 
 	// 日志记录器
