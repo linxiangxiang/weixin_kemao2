@@ -3,7 +3,7 @@ spring.datasource:
    # serverTimezone=CST 表示指定服务器的时区，CST=China Standard Time
    url: jdbc:mysql://127.0.0.1:3306/kemao_2?useSSL=false&serverTimezone=CST&allowPublicKeyRetrieval=true
    username: root
-   password: 1234
+   password: root
 
 # 指定服务器在运行的时候，Tomcat使用的端口
 # Spring Boot自带了一个阉割版Tomcat，默认不支持JSP，只是支持Servlet

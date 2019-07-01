@@ -2,6 +2,7 @@ package com.gdkm.weixin.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,8 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gdkm.weixin.domain.InMessage;
 import com.gdkm.weixin.service.MessageConvertHelper;
 
-//@RestController是满足RESTful风格的一种控制器实现，实际上它还是@Controller。
-//但是@RestController只是返回内容，不返回视图（JSP、HTML）。
+@Controller
 @RestController
 //路径和类的映射关系
 //<url-pattern> 用于映射URL和Servlet的关系
