@@ -14,67 +14,67 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public abstract class InMessage implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
 	// Xml开头的注解都是JAXB的
-		@XmlElement(name = "ToUserName")
-		@JsonProperty("ToUserName")
-		private String toUserName;
+	@XmlElement(name = "ToUserName")
+	@JsonProperty("ToUserName")
+	private String toUserName;
 
-		@XmlElement(name = "FromUserName")
-		@JsonProperty("FromUserName")
-		private String fromUserName;
+	@XmlElement(name = "FromUserName")
+	@JsonProperty("FromUserName")
+	private String fromUserName;
 
-		@XmlElement(name = "CreateTime")
-		@JsonProperty("CreateTime")
-		private long createTime;
+	@XmlElement(name = "CreateTime")
+	@JsonProperty("CreateTime")
+	private long createTime;
 
-		@XmlElement(name = "MsgType")
-		@JsonProperty("MsgType")
-		private String msgType;
+	@XmlElement(name = "MsgType")
+	@JsonProperty("MsgType")
+	private String msgType;
 
-		@XmlElement(name = "MsgId")
-		@JsonProperty("MsgId")
-		private Long msgId;
-		
-		public String getToUserName() {
-			return toUserName;
-		}
+	@XmlElement(name = "MsgId")
+	@JsonProperty("MsgId")
+	private Long msgId;
 
-		public void setToUserName(String toUserName) {
-			this.toUserName = toUserName;
-		}
+	public String getToUserName() {
+		return toUserName;
+	}
 
-		public String getFromUserName() {
-			return fromUserName;
-		}
+	public void setToUserName(String toUserName) {
+		this.toUserName = toUserName;
+	}
 
-		public void setFromUserName(String fromUserName) {
-			this.fromUserName = fromUserName;
-		}
+	public String getFromUserName() {
+		return fromUserName;
+	}
 
-		public long getCreateTime() {
-			return createTime;
-		}
+	public void setFromUserName(String fromUserName) {
+		this.fromUserName = fromUserName;
+	}
 
-		public void setCreateTime(long createTime) {
-			this.createTime = createTime;
-		}
+	public long getCreateTime() {
+		return createTime;
+	}
 
-		public String getMsgType() {
-			return msgType;
-		}
+	public void setCreateTime(long createTime) {
+		this.createTime = createTime;
+	}
 
-		public void setMsgType(String msgType) {
-			this.msgType = msgType;
-		}
+	public String getMsgType() {
+		return msgType;
+	}
 
-		public Long getMsgId() {
-			return msgId;
-		}
+	public void setMsgType(String msgType) {
+		this.msgType = msgType;
+	}
 
-		public void setMsgId(Long msgId) {
-			this.msgId = msgId;
-		}
+	public Long getMsgId() {
+		return msgId;
+	}
 
-		abstract public String toString();
+	public void setMsgId(Long msgId) {
+		this.msgId = msgId;
+	}
 
+	abstract public String toString();
 }

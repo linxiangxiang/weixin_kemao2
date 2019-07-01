@@ -12,6 +12,7 @@ import com.gdkm.weixin.domain.InMessage;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class TextInMessage extends InMessage {
 
+
 	private static final long serialVersionUID = 1L;
 
 	@XmlElement(name = "Content")
@@ -32,5 +33,4 @@ public class TextInMessage extends InMessage {
 				+ getFromUserName() + ", getCreateTime()=" + getCreateTime() + ", getMsgType()=" + getMsgType()
 				+ ", getMsgId()=" + getMsgId() + "]";
 	}
-	
 }
