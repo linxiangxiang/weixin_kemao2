@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gdkm.weixin.domain.InMessage;
+import com.gdkm.weixin.service.MessageConvertHelper;
+
 //@RestController是满足RESTful风格的一种控制器实现，实际上它还是@Controller。
 //但是@RestController只是返回内容，不返回视图（JSP、HTML）。
 @RestController
@@ -49,6 +52,14 @@ public class MessageReceiverController {
 			// 把消息丢入队列
 			// 消费队列中的消息
 			// 产生客服消息
+			InMessage inMessage = MessageConvertHelper.convert(xml);
+			
+			if (inMessage == null) {
+				LOG.error("消息无法转换！原文：\n{}\n", xml);
+				// 消息无法转换
+				return "success";
+			}
+
 
 			return "success";
 		}
