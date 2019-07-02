@@ -90,6 +90,18 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<!-- 可以打包成一个可执行jar -->
+					<executable>true</executable>
+					<!-- 创建一个子进程去执行，此时可以使用mvn spring-boot:start启动 -->
+					<!-- 也可以使用mvn spring-boot:stop停止 -->
+					<fork>true</fork>
+					<!-- 注意：这种启动和停止，都需要借助一个JMX端口，每个模块的JMX端口号必须不同 -->
+					<!-- 默认端口号是9001，建议每100个端口作为一段端口号分配一个人使用 -->
+					<!-- 这里选择使用10000 -->
+					<!-- 端口号必须大于1024，并且小于或等于65535 -->
+					<jmxPort>10024</jmxPort>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
