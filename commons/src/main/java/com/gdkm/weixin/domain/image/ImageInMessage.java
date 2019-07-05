@@ -7,9 +7,11 @@ import com.gdkm.weixin.domain.InMessage;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 @XmlRootElement(name = "xml")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ImageInMessage extends InMessage  {
+public class ImageInMessage extends InMessage {
+
 	private static final long serialVersionUID = 1L;
 
 	@XmlElement(name = "PicUrl")

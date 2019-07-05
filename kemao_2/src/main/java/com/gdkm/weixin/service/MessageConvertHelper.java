@@ -12,6 +12,8 @@ import com.gdkm.weixin.domain.image.ImageInMessage;
 import com.gdkm.weixin.domain.text.TextInMessage;
 
 public class MessageConvertHelper {
+
+	// 1.使用一个Map来记录消息类型和Java类型的关系
 	private static final Map<String, Class<? extends InMessage>> typeMap = new ConcurrentHashMap<>();
 	static {
 		typeMap.put("text", TextInMessage.class);
@@ -24,8 +26,8 @@ public class MessageConvertHelper {
 		typeMap.put("event", EventInMessage.class);
 		typeMap.put("link", TextInMessage.class);
 		typeMap.put("shortvideo", TextInMessage.class);
-
 	}
+
 	public static Class<? extends InMessage> getClass(String xml) {
 		// 获取类型
 		String type = xml.substring(xml.indexOf("<MsgType><![CDATA[") + 18);
@@ -35,17 +37,18 @@ public class MessageConvertHelper {
 		Class<? extends InMessage> c = typeMap.get(type);
 		return c;
 	}
+
 	// 2.提供一个静态的方法，可以传入XML，把XML转换为Java对象
-		public static <T extends InMessage> T convert(String xml) {
-			Class<? extends InMessage> c = getClass(xml);
-			if (c == null) {
-				return null;
-			}
-
-			// 使用JAXB转换
-			@SuppressWarnings("unchecked")
-			T msg = (T) JAXB.unmarshal(new StringReader(xml), c);
-
-			return msg;
+	public static <T extends InMessage> T convert(String xml) {
+		Class<? extends InMessage> c = getClass(xml);
+		if (c == null) {
+			return null;
 		}
+
+		// 使用JAXB转换
+		@SuppressWarnings("unchecked")
+		T msg = (T) JAXB.unmarshal(new StringReader(xml), c);
+
+		return msg;
+	}
 }

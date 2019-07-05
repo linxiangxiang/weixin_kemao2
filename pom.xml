@@ -9,7 +9,9 @@
 		<module>commons</module>
 		<module>subscribe</module>
 		<module>unsubscribe</module>
-	</modules>
+		<module>library</module>
+		<module>self_menu</module>
+  	</modules>
 
 	<!-- 项目的属性配置 -->
 	<properties>

@@ -8,9 +8,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gdkm.weixin.domain.InMessage;
 
+
 @XmlRootElement(name = "xml")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class EventInMessage extends InMessage {
+
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "Event")
 	@JsonProperty("Event")

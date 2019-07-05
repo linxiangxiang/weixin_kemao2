@@ -11,15 +11,15 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
 
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@Entity // 表示一个JPA的实体
+@Table(name = "wx_user") // 指定表名
 public class User {
-	
+
 	public static enum Status {
 		/**
 		 * 关注状态
@@ -30,6 +30,7 @@ public class User {
 		 */
 		IS_UNSUBSCRIBE;
 	}
+
 	@Id
 	@Column(length = 36)
 	// 使用UUID2算法生成主键的值，分布式系统里面不能使用自增长作为主键值

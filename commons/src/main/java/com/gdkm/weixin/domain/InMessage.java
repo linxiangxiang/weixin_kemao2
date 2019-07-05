@@ -9,8 +9,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 @XmlRootElement(name = "xml")
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.FIELD) // 从字段获取配置信息
 public abstract class InMessage implements Serializable {
 
 	private static final long serialVersionUID = 1L;
